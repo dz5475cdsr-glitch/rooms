@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>rooms</title>
+<title>Rooms</title>
 
 <style>
 
-/* BASE */
 body{
     margin:0;
     color:white;
@@ -76,18 +75,18 @@ body{
 <!-- SFONDO -->
 <div class="sfondo"></div>
 
-<!-- PLAYER + BRANO -->
+<!-- PLAYER -->
 <div class="player-box">
 
-    <audio id="player" controls></audio>
+    <audio id="player" controls preload="auto">
+        <source src="audio/room-1.mp3" type="audio/mpeg">
+        Il tuo browser non supporta l'audio.
+    </audio>
 
     <div class="playlist">
-
-        <!-- 🎧 BRANO UNICO -->
         <div class="track" onclick="playTrack('audio/room-1.mp3')">
             Room 1
         </div>
-
     </div>
 
 </div>
@@ -98,11 +97,13 @@ body{
 </div>
 
 <script>
+
 function playTrack(file){
     const player = document.getElementById("player");
     player.src = file;
     player.play();
 }
+
 </script>
 
 </body>
