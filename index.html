@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rooms</title>
+
+<style>
+
+/* BASE */
+body{
+    margin:0;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+/* SFONDO */
+.sfondo{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("sfondo sito.jpg") center/cover no-repeat;
+    opacity:0.35;
+    z-index:-1;
+}
+
+/* PLAYER */
+.player-box{
+    position:fixed;
+    top:40px;
+    left:40px;
+    width:260px;
+}
+
+.player-box audio{
+    width:100%;
+}
+
+/* PLAYLIST */
+.playlist{
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.track{
+    background:#111;
+    padding:10px;
+    cursor:pointer;
+    border-left:3px solid white;
+    transition:0.2s;
+}
+
+.track:hover{
+    background:#222;
+}
+
+/* AUTRICE */
+.autrice{
+    position:fixed;
+    bottom:25px;
+    left:40px;
+    color:#aaa;
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SFONDO -->
+<div class="sfondo"></div>
+
+<!-- PLAYER + BRANO -->
+<div class="player-box">
+
+    <audio id="player" controls></audio>
+
+    <div class="playlist">
+
+        <!-- 🎧 BRANO UNICO -->
+        <div class="track" onclick="playTrack('audio/room-1.mp3')">
+            Room 1
+        </div>
+
+    </div>
+
+</div>
+
+<!-- AUTRICE -->
+<div class="autrice">
+    Archivio sonoro di Victoria Okebugwu · 2026
+</div>
+
+<script>
+function playTrack(file){
+    const player = document.getElementById("player");
+    player.src = file;
+    player.play();
+}
+</script>
+
+</body>
+</html>
